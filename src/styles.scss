@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.css";
+
+body {
+    padding-top: 6rem;
+  }
+  .starter-template {
+    padding-left: 250px;
+    
+  }
+  
+.bg-black {
+    background-color: #000 !important;
+  }
+
+.navbar {
+    padding: 0 20px;
+}
+
+.sub-header {    
+    top: 40px;
+    background-color: #ffc700 !important;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.sub-header ul{
+    width:100%;
+}
+
+.sub-header ul>li{
+    width:50%;
+    text-align: center;
+    border-right:2px solid #000;
+}
+
+.sub-header ul>li:last-child{    
+    border-right:none;
+}
+
