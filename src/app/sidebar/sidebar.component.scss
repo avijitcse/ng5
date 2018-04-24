@@ -1,13 +1,13 @@
 #sidebar-wrapper {
     z-index: 1000;
-    position: fixed;
-    left: 250px;
-    width: 250px;
+    // position: fixed;
+    // left: 250px;
+    // width: 250px;
     height: 100%;
-    margin-left: -250px;
+    margin-left: -15px;
     overflow-y: auto;
     background: #fff;
-    border-right: 1px solid #D3D3D3;
+    border-right: 2px solid #000;
     
 }
 
@@ -15,7 +15,7 @@
 .sidebar-nav {
     position: absolute;
     top: 0;
-    width: 250px;
+    width: 100%;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -54,7 +54,7 @@
     color: #333;
 }
 
-.sidebar-nav > .sidebar-brand a:hover {
+.sidebar-nav > .sidebar-brand a:hover, .sidebar-nav > .sidebar-brand a.active {
     color: #333;
     background-color: #ffc83d !important;
 }

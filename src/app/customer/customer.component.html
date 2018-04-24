@@ -1,0 +1,111 @@
+<!--Form div-->
+<div class="starter-template">          
+    <form [formGroup]='customerForm' novalidate>
+      <div class="form-group row">
+        <label for="custName" class="col-sm-2 col-form-label">Name:</label>        
+        <div class="col-sm-10" [ngClass]="{
+            'has-danger': custName.invalid && (custName.dirty || custName.touched),
+            'has-success': custName.valid && (custName.dirty || custName.touched)
+          }">
+          <input type="text" class="form-control" id="custName" formControlName="custName" required>
+          <div class="form-control-feedback"
+                *ngIf="custName.invalid && (custName.dirty || custName.touched)">                
+                <p *ngIf="custName.errors.required">Customer Name is required</p>
+                <p *ngIf="custName.errors.minlength">Customer Name must be at least 3 characters long.</p>
+          </div>
+        </div>
+      </div>
+       <div class="form-group row">
+        <label for="custAddr" class="col-sm-2 col-form-label">Address:</label>
+        <div class="col-sm-10" [ngClass]="{
+            'has-danger': custAddr.invalid && (custAddr.dirty || custAddr.touched),
+            'has-success': custAddr.valid && (custAddr.dirty || custAddr.touched)
+          }">
+          <textarea class="form-control" id="custAddr" formControlName="custAddr" rows="3" required></textarea>
+          <div class="form-control-feedback"
+                *ngIf="custAddr.invalid && (custAddr.dirty || custAddr.touched)">                
+                <p *ngIf="custAddr.errors.required"> Address is required</p>
+          </div>
+        </div>
+      </div>        
+      <div class="row">
+          <label for="custHomePhone" class="col-sm-2 col-form-label">Phone:</label>
+          <div class="phone-container col-sm-10">
+                <div class="col-sm-4 form-group" [ngClass]="{
+                    'has-danger': custHomePhone.invalid && (custHomePhone.dirty || custHomePhone.touched),
+                    'has-success': custHomePhone.valid && (custHomePhone.dirty || custHomePhone.touched)
+                  }">                  
+                    <input type="text" class="form-control" id="custHomePhone" formControlName="custHomePhone" placeholder="Home" required>
+                    <div class="form-control-feedback"
+                            *ngIf="custHomePhone.invalid && (custHomePhone.dirty || custHomePhone.touched)">                
+                            <p *ngIf="custHomePhone.errors.required"> Home Phone is required</p>
+                    </div>
+                </div>
+                <div class="col-sm-4 form-group">                  
+                    <input type="text" class="form-control" id="custOfficePhone" formControlName="custOfficePhone" placeholder="Office">
+                </div>
+                <div class="col-sm-4 form-group">                  
+                    <input type="text" class="form-control" id="custMobilePhone" formControlName="custMobilePhone" placeholder="Mobile">
+                </div>
+           </div>
+      </div>
+      
+      <div class="form-group row">
+          <label for="custFax" class="col-sm-2 col-form-label">Fax:</label>
+          <!-- class="col-sm-4 col-sm-2col form-group" -->
+          <div class="col">
+              <input type="text" class="form-control" id="custFax" formControlName="custFax">
+          </div>
+          <!-- <div class="px-3"></div> -->
+          <label for="custEmail" class="col-sm-1 col-form-label">Email: </label>
+          <div class="col" [ngClass]="{
+            'has-danger': custEmail.invalid && (custEmail.dirty || custEmail.touched),
+            'has-success': custEmail.valid && (custEmail.dirty || custEmail.touched)
+          }">
+              <input type="text" class="form-control" id="custEmail" formControlName="custEmail" required>
+              <div class="form-control-feedback"
+                    *ngIf="custEmail.invalid && (custEmail.dirty || custEmail.touched)">                
+                    <p *ngIf="custEmail.errors.required">Customer Email is required</p>
+                    <p *ngIf="custEmail.errors.pattern">The email address must contain at least the @ character</p>
+            </div>
+          </div>
+      </div>
+      <div class="form-group row">
+          <label for="custAddrSource" class="col-sm-2 col-form-label pt-0 line-ht1">Address Source:</label>
+          <!-- class="col-sm-4 col-sm-2col" -->
+          <div class="col">                
+              <select id="custAddrSource" formControlName="custAddrSource" class="form-control">
+                  <option selected></option>
+                  <option>Branches</option>
+                  <option>M2U</option>
+                  <option>MGCC</option>
+                  <option>RLTS</option>
+              </select>
+          </div>
+          <!-- <div class="px-3"></div> -->
+          <label for="custAccType" class="col-sm-1 col-form-label">Type: </label>
+          <div class="col">                
+              <select id="custAccType" formControlName="custAccType" class="form-control">
+                  <option selected></option>
+                  <option>Savings</option>
+                  <option>Current</option>
+              </select>
+          </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label"></label>
+        <div style="padding: 15px">
+            <re-captcha (resolved)="resolved($event)" siteKey="6Lf5f8YSAAAAAOB1fc2G5xUzzGrbMLhKBeOtxWRQ"></re-captcha>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-11 text-right">
+          <button type="submit" class="fa fa-play-circle-o btn btn-primary"> Powerfind</button>
+        </div>
+      </div>
+      
+      <!-- <pre>Dirty? {{ customerForm.controls.custName.dirty | json }}</pre>
+      <pre>Dirty? {{ custName.dirty | json }}</pre> -->
+    </form>
+</div>
+<!-- End Form div-->

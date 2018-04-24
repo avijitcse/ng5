@@ -1,10 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <!-- <router-outlet></router-outlet> -->
 <app-nav></app-nav>
-<app-sidebar></app-sidebar>
-<div class="container">
-  <div class="starter-template">
-    <h1>Mobile Care</h1>
-    <p class="lead">CARE/RLTS leads referral Module.</p>
-  </div>
+<!-- <app-activity></app-activity> -->
+
+<div class="container-fluid h-100">
+    <div class="row h-100">        
+        <div class="col-md-3 col-md-20 bg-white border-right d-none d-sm-block">
+          <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-9 col-md-80">            
+          <router-outlet></router-outlet>
+        </div>
+    </div>
 </div>
+    
+  

@@ -2,12 +2,17 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.css";
 
+html{
+    height:100%
+}
 body {
     padding-top: 6rem;
+    height:100%;
+    background-color: #f7f7f7;
   }
   .starter-template {
-    padding-left: 250px;
-    
+    // padding-left: 200px;
+    padding: 0 !important;
   }
   
 .bg-black {
@@ -17,6 +22,15 @@ body {
 .navbar {
     padding: 0 20px;
 }
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #000;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+     color:#fff;
+}
+
 
 .sub-header {    
     top: 40px;
@@ -40,3 +54,84 @@ body {
     border-right:none;
 }
 
+
+
+.line-ht1{
+    line-height: 1;
+}
+
+[class*="col-"] {
+    
+    // background-color: rgba(86, 61, 124, .15);
+    
+}
+
+.phone-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.phone-container div{
+    padding-right:0;
+    padding-left:0;
+}
+
+.has-danger .form-control{
+    border-color: #d9534f;
+}
+
+.has-danger .form-control-feedback {
+    color: #d9534f;
+}
+
+@media (min-width: 576px) {
+    .col-md-20 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 30%;
+        flex: 0 0 30%;
+        max-width: 30%;
+        height: 100%;
+      }
+    
+    .col-md-80 {
+        -webkit-box-flex: 2;
+        -ms-flex: 0 0 70%;
+        flex: 0 0 70%;
+        max-width: 70%;
+        height: 100%;
+      }
+
+      .starter-template {       
+        padding: 2rem 2rem 0 2rem !important;
+      }
+
+    //   .col-sm-2col{
+    //     max-width:31.8%;
+    // }
+    .phone-container div {
+        padding-right:15px;
+    }
+    .phone-container div:last-child {
+        padding-right:0 !important;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .col-md-20 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 23%;
+        flex: 0 0 23%;
+        max-width: 23%;
+        height: 100%;
+      }
+    
+    .col-md-80 {
+        -webkit-box-flex: 2;
+        -ms-flex: 0 0 76%;
+        flex: 0 0 76%;
+        max-width: 76%;
+        height: 100%;
+      }
+  }

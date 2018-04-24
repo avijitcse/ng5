@@ -1,12 +1,21 @@
 <!-- Sidebar -->
-<div id="sidebar-wrapper">
+<!-- <div class="d-lg-none">hide on screens wider than lg</div> -->
+
+<!-- <div class="d-lg-none">hide on screens wider than lg</div>
+<div class="d-none d-md-block">hide on screens smaller than md</div> -->
+
+<div class="d-none d-sm-block">
+<div id="sidebar-wrapper" class="d-none d-sm-block">
     <ul class="sidebar-nav">
         <li class="sidebar-brand">
-            <a href="#">Customer</a>
+            
+            <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Customer</a>
         </li>
         <li class="sidebar-brand">
-            <a href="#">Activity</a>
+            
+            <a routerLink="activity" routerLinkActive="active">Activity</a>
         </li>
     </ul>
+</div>
 </div>
 <!-- /#sidebar-wrapper -->
