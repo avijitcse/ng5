@@ -11,6 +11,12 @@ import { CustomerComponent } from './customer/customer.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  RECAPTCHA_SETTINGS,
+  RecaptchaSettings,
+  RecaptchaLoaderService,
+  RecaptchaModule,
+} from 'ng-recaptcha';
 
 
 @NgModule({
@@ -26,7 +32,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RecaptchaModule.forRoot() // Keep in mind the "forRoot"-magic nuances!
   ],
   providers: [],
   bootstrap: [AppComponent]

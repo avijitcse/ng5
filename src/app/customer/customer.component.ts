@@ -8,6 +8,10 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
   styleUrls: ['./customer.component.scss']
 })
 export class CustomerComponent implements OnInit {
+  resolved(captchaResponse: string) {
+    console.log(`Resolved captcha with response ${captchaResponse}:`);
+  }
+  
   customerForm: FormGroup;
   custName: FormControl;
   custAddr: FormControl;
@@ -18,6 +22,7 @@ export class CustomerComponent implements OnInit {
   custEmail: FormControl;
   custAddrSource: FormControl;
   custAccType: FormControl;
+  captcha: FormControl;
 
 
 
@@ -52,6 +57,7 @@ export class CustomerComponent implements OnInit {
     this.custEmail = new FormControl('', [Validators.required, Validators.pattern("[^ @]*@[^ @]*")]);
     this.custAddrSource = new FormControl();
     this.custAccType = new FormControl();
+    this.captcha = new FormControl()
   }
 
   createForm() { 
@@ -64,7 +70,8 @@ export class CustomerComponent implements OnInit {
       custFax: this.custFax,
       custEmail: this.custEmail,
       custAddrSource: this.custAddrSource,
-      custAccType: this.custAccType
+      custAccType: this.custAccType,
+      captcha: this.captcha
     });
   }
 
