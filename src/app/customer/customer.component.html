@@ -66,7 +66,7 @@
               <div class="form-control-feedback"
                     *ngIf="custEmail.invalid && (custEmail.dirty || custEmail.touched)">                
                     <p *ngIf="custEmail.errors.required">Customer Email is required</p>
-                    <p *ngIf="custEmail.errors.pattern">The email address must contain at least the @ character</p>
+                    <p *ngIf="custEmail.errors.pattern">Please enter a valid email id</p>
             </div>
           </div>
       </div>
@@ -98,9 +98,29 @@
             <re-captcha (resolved)="resolved($event)" siteKey="6Lf5f8YSAAAAAOB1fc2G5xUzzGrbMLhKBeOtxWRQ"></re-captcha>
         </div>
       </div>
+
+
+      <!-- <p *ngIf="_added.length == 0">None</p> -->      
+        <div class="alert alert-success" *ngFor="let added of _added">
+            <strong>Success!</strong> This alert box could indicate a successful or positive action.
+            You Added:
+            {{added.title}}
+        </div>
+        
+
+
+      <!-- <ul>
+        <li *ngFor="let post of _posts">
+          <b>{{post.title}}:</b> {{post.body}}
+        </li>
+      </ul>
+      <div *ngIf="_error">
+        Error: {{_error.status}}: {{_error.statusText}}
+      </div> -->
+
       <div class="form-group row">
         <div class="col-sm-11 text-right">
-          <button type="submit" class="fa fa-play-circle-o btn btn-primary"> Powerfind</button>
+          <button type="submit" class="fa fa-play-circle-o btn btn-primary" (click)="onAdd()"> Powerfind</button>
         </div>
       </div>
       
