@@ -95,7 +95,7 @@
       <div class="form-group row">
         <label class="col-sm-2 col-form-label"></label>
         <div style="padding: 15px">
-            <re-captcha (resolved)="resolved($event)" siteKey="6Lf5f8YSAAAAAOB1fc2G5xUzzGrbMLhKBeOtxWRQ"></re-captcha>
+            <re-captcha (resolved)="resolved($event)" formControlName="captcha" siteKey="6Lf5f8YSAAAAAOB1fc2G5xUzzGrbMLhKBeOtxWRQ"></re-captcha>
         </div>
       </div>
 
@@ -120,7 +120,7 @@
 
       <div class="form-group row">
         <div class="col-sm-11 text-right">
-          <button type="submit" class="fa fa-play-circle-o btn btn-primary" (click)="onAdd()"> Powerfind</button>
+          <input type="submit" [disabled]="!customerForm.valid" class="fa fa-play-circle-o btn btn-primary" (click)="onAdd()" value="Powerfind">
         </div>
       </div>
       

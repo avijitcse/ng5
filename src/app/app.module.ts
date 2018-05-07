@@ -19,7 +19,7 @@ import {
 } from 'ng-recaptcha';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomerService } from './customer/customer.service';
-
+import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +35,8 @@ import { CustomerService } from './customer/customer.service';
     FormsModule,
     ReactiveFormsModule,
     RecaptchaModule.forRoot(), // Keep in mind the "forRoot"-magic nuances!,
-    HttpClientModule
+    HttpClientModule,
+    RecaptchaFormsModule
   ],
   providers: [CustomerService],
   bootstrap: [AppComponent]

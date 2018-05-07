@@ -111,7 +111,7 @@ export class CustomerComponent implements OnInit {
     this.custEmail = new FormControl('', [Validators.required, Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]);
     this.custAddrSource = new FormControl();
     this.custAccType = new FormControl();
-    this.captcha = new FormControl()
+    this.captcha = new FormControl('', Validators.required)
   }
 
   createForm() { 
